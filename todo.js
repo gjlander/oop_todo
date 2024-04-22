@@ -7,7 +7,17 @@ export default class Todo {
     }
     init() {
         const li = document.createElement("li");
-        li.innerText = this.title;
+        li.classList.add("d-flex");
+
+        const checkDoneBox = document.createElement("input");
+        checkDoneBox.classList.add("form-check-input");
+        checkDoneBox.setAttribute("type", "checkbox");
+        li.appendChild(checkDoneBox);
+
+        const todoTitle = document.createElement("p");
+        todoTitle.innerText = this.title;
+        li.appendChild(todoTitle);
+
         this.container.appendChild(li);
     }
 }
